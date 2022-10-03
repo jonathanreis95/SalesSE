@@ -1,0 +1,11 @@
+@import "bootstrap.min.css";
+@import "dataTables.bootstrap4.min.css";
+
+
+td.details-control {
+    background: url('../img/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.details td.details-control {
+    background: url('../img/details_close.png') no-repeat center center;
+}
