@@ -6,11 +6,8 @@
 
   <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(página atual)</span></a>
-      </li>
       <li class="nav-item">
-        <a class="nav-link" href="/sales">Venda</a>
+        <a class="nav-link" href="/sales">Vendas</a>
       </li>
 
       <li class="nav-item dropdown">

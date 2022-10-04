@@ -21,9 +21,9 @@ class ProductController extends BaseController
     public function index()
     {
 
-        $query = "SELECT tb.* , pt.description as product_type_desc
-        FROM  products tb INNER JOIN product_types pt ON pt.product_type_id = tb.product_type_id where tb.status='1' and pt.status='1'";
-       
+        /* $query = "SELECT tb.* , pt.description as product_type_desc
+        FROM  products tb INNER JOIN product_types pt ON pt.product_type_id = tb.product_type_id where tb.status='1' and pt.status='1'"; */
+       $query = 'SELECT * fROM "V_PRODUCTS"';
        $this->view->products  = $this->productModel->executeSQL($query);
 
         $this->setPageTitle('Produto');
@@ -52,7 +52,7 @@ class ProductController extends BaseController
 
         $status  = $this->productModel->save($data);
         if($status){
-            Redirect::route('/product'); 
+            Redirect::route('/products'); 
         }else{
             echo 'Erro  ao inserir no Banco de dados !';
         }
@@ -87,7 +87,7 @@ class ProductController extends BaseController
         
         $status  = $this->productModel->update($data, $id);
         if($status){
-            Redirect::route('/product'); 
+            Redirect::route('/products'); 
         }else{
             echo 'Erro  ao inserir no Banco de dados !';
         }
@@ -101,7 +101,7 @@ class ProductController extends BaseController
         
         $status  = $this->productModel->update($data, $id);
         if($status){
-            Redirect::route('/product'); 
+            Redirect::route('/products'); 
         }else{
             echo 'Erro  ao inserir no Banco de dados !';
         }

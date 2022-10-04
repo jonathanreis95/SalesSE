@@ -23,13 +23,14 @@ class SaleController extends BaseController
     public function index()
     {
 
-        $query = "SELECT 
+        /* $query = "SELECT 
 		sp.sale_id, sp.sale_product_id, sp.unit_price, sp.unit_price_tax, sp.quantity, sp.total_price, sp.total_price_tax, sp.description, 
-		pr.product_id, pr.description
+		pr.product_id, pr.description as product_desc
         FROM  sale_products sp 
         INNER JOIN products pr ON pr.product_id = sp.product_id
 		  where sp.status = 1 and pr.status = 1 
-		  ORDER BY sp.sale_id desc";
+		  ORDER BY sp.sale_id desc"; */
+          $query = 'SELECT * fROM "V_SALES_PRODUCTS"';
         $this->view->saleProducts  = $this->saleModel->executeSQL($query);
 
         $this->setPageTitle('Vendas');
@@ -60,27 +61,28 @@ class SaleController extends BaseController
             'total_taxes' => $this->getPrice($objSale->Sale->total_taxes),
             'description' => $objSale->Sale->description_sale,            
             'status' => '1'
-        ];    
+        ];   
+      
         $saleID  = $this->saleModel->save($dataSale, null, true); 
-
-        $saleID  = 4;
+        //$saleID = 6;
+        //echo '<pre>', print_r($objSale), die;
         if($saleID > 0):
             if(isset($objSale->Products)):
                 foreach($objSale->Products as $Products):
                     $dataProductSale = [
                         'sale_id' => $saleID,
                         'product_id' => $Products->ProductID,
-                        'unit_price' => $this->getPrice($Products->Price),
-                        'unit_price_tax' => $this->getPrice($Products->PriceTax),
+                        'unit_price' => $this->getPrice($Products->UnitPrice),
+                        'unit_price_tax' => $this->getPrice($Products->UnitPriceTax),
                         'quantity' => $Products->Quantity,    
                         'total_price' => $this->getPrice($Products->Total),
                         'total_price_tax' => $this->getPrice($Products->TotalTax),                            
-                        'description' => $Products->ProductDesc,            
+                        'description' => $Products->ProdutoDescription,            
                         'status' => '1'
                     ]; 
-
-                    $saleID  = $this->saleModel->save($dataProductSale, 'sale_products', false);
-                    if(!$saleID){
+                    
+                    $saleProductID  = $this->saleModel->save($dataProductSale, 'sale_products', false);
+                    if(!$saleProductID){
                         $status = false;  
                     }
                 endforeach;    

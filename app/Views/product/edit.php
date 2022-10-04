@@ -44,4 +44,4 @@
 </div>
 
 
-<script src="/assets/js/product.js"></script>
+<script src="/assets/js/products/index.js"></script>

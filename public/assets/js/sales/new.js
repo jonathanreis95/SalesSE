@@ -8,9 +8,9 @@ $(document).ready( function () {
     var arrProduct = [];
     var dtProductsList;
 
-    function funcoesVendaCadastro(){
+    function FunctionsSaleList(){
 
-        function req_save(){
+        function save(){
     
             let total_price = $('[name=total_price]').val();
             total_price = (total_price != ''? total_price: 0);
@@ -38,7 +38,7 @@ $(document).ready( function () {
 
         function initProductsList() {
             var tblProductsList =  `
-             <table id="tblProductsList" class="table table-store w-100">
+             <table id="tblProductsList" class="table w-100">
                 <thead>
                     <tr>
                         <th class="col-productID">Codigo</th>
@@ -149,12 +149,12 @@ $(document).ready( function () {
         function addProduct(){
 
             let Quantity = $('[name=quantity]').val();
-            let UnitPrice = $('[name=unit_price]').val().replace(/[.]/g,'').replace(/[,]/g,'.');
+            let UnitPrice = $('[name=unit_price]').val();//.replace(/[.]/g,'').replace(/[,]/g,'.');
             UnitPrice = (UnitPrice != ''? UnitPrice: 0);
-            let TotalTax = $('[name=unit_price_tax]').val().replace(/[.]/g,'').replace(/[,]/g,'.');
+            let TotalTax = $('[name=unit_price_tax]').val();//.replace(/[.]/g,'').replace(/[,]/g,'.');
             TotalTax = (TotalTax != ''? TotalTax: 0);
 
-            let Total = $('[name=total]').val().replace(/[.]/g,'').replace(/[,]/g,'.');
+            let Total = $('[name=total]').val();//.replace(/[.]/g,'').replace(/[,]/g,'.');
             Total = (Total != ''? Total: 0);
             let ProdutoDescription = $('[name=product_description]').val();
     
@@ -291,7 +291,7 @@ $(document).ready( function () {
                     return false;
                 }
     
-                req_save();
+                save();
             });
     
             $('#btnCleanSale').on('click', function(){
@@ -369,14 +369,14 @@ $(document).ready( function () {
         }
     
 
-        function index(){
+        function main(){
 
             events();
     
             init();
         }
 
-        index();
+        main();
     }
-    funcoesVendaCadastro();
+    FunctionsSaleList();
 });

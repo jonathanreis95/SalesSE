@@ -22,10 +22,12 @@ class TaxPercentageController extends BaseController
     
     public function index()
     {
+        
         $this->setPageTitle('Imposto dos tipos de produtos');
 
-        $query = "SELECT tb.* , pt.description as product_type_desc
-         FROM  taxe_product_types tb INNER JOIN product_types pt ON pt.product_type_id = tb.product_type_id where tb.status='1' and pt.status='1'";
+        /* $query = "SELECT tb.* , pt.description as product_type_desc
+         FROM  taxe_product_types tb INNER JOIN product_types pt ON pt.product_type_id = tb.product_type_id where tb.status='1' and pt.status='1'"; */
+         $query = 'SELECT * FROM "V_TAXES"';
         
         $this->view->taxPoductTypes  = $this->taxPercentageModel->executeSQL($query);
         $this->render('tax_percentages/index', 'layout');

@@ -42,6 +42,24 @@ Class DataBase
             }catch(PDOExpection $e){
                 echo $e->getMessage();
             }
-        }   
+        }else if($conf['driver'] == 'postgree'){
+            
+            $host = $conf['postgree']['host'];
+            $port = $conf['postgree']['port'];
+            $database = $conf['postgree']['database'];
+            $user = $conf['postgree']['user'];
+            $pass = $conf['postgree']['pass'];
+            try{
+                //echo '<pre>'."pgsql:host=$host;port=$port;dbname=$database;". $user. $pass; die;
+                $pdo = new PDO("pgsql:host=$host;port=$port;dbname=$database;", $user, $pass);
+                
+
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);                                
+                $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); 
+                return $pdo;
+            }catch(PDOExpection $e){
+                echo $e->getMessage();
+            }
+        }  
     }
 }

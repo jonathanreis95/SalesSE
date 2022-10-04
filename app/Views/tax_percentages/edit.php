@@ -39,4 +39,4 @@
 </div>
 
 
-<script src="/assets/js/taxPercentage.js"></script>
+<script src="/assets/js/taxes/index.js"></script>
