@@ -4,7 +4,7 @@
         <?php $this->getPageTitle(); ?> 
     </h1>
 
-    <form action="/product/<?php echo $this->view->product->product_id; ?>/update" method="POST">
+    <form id="formProduct" action="/product/<?php echo $this->view->product->product_id; ?>/update" method="POST">
 
     <div class="form-group">
             <label for="description">Descrição do Produto</label>

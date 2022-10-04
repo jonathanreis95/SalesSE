@@ -5,7 +5,7 @@
     </h1>
 
 
-    <form action="/product-type/save" method="POST">
+    <form id="formProductType" action="/product-type/save" method="POST">
         <div class="form-group">
             <label for="description">Tipo de Produto</label>
             <input type="text" class="form-control" name="description" id="description">
@@ -14,3 +14,5 @@
     </form>
 
 </div>
+
+<script src="/assets/js/productType/index.js"></script>

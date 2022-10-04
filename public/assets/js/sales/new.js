@@ -363,7 +363,7 @@ $(document).ready( function () {
                 });
             }
     
-            initValidationProduct();
+            initValidationProduct(); 
     
             initProductsList();
         }

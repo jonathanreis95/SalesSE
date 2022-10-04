@@ -5,7 +5,7 @@
     </h1>
 
 
-    <form action="/tax-percentage/save" method="POST">
+    <form id="formTaxes" action="/tax-percentage/save" method="POST">
 
         <div class="form-group">
             <label for="product_type_id">Tipo de Produto</label>

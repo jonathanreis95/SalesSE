@@ -5,7 +5,7 @@
     </h1>
 
 
-    <form action="/product/save" method="POST">
+    <form id="formProduct" action="/product/save" method="POST">
 
         <div class="form-group">
             <label for="description">Descrição do Produto</label>

@@ -2,23 +2,16 @@ $(document).ready(function(){
     function functionTaxes()
     {
 
-        var formTaxes;
+        var formProductType;
 
         function initValidation(){
-            $.validator.addMethod('requiredCombo', function (value, element, args) {
-                return (value > 0)
-            }, 'Este campo é obrigatório');
-
-            formTaxes = $('#formTaxes').validate({
+            formProductType = $('#formProductType').validate({
                 errorClass: 'text-danger is-invalid',
                 rules: {
-                    unit_percentage: "required",
-                    taxe_type: "required",
-                    product_type_id: 'requiredCombo',
+                    description: "required",
                 },
                 messages: {
-                    unit_percentage: 'Este campo é obrigatório',
-                    taxe_type: 'Este campo é obrigatório',
+                    description: 'Este campo é obrigatório',
                 },
                 invalidHandler: function (form, validator) {
                     var erros = validator.numberOfInvalids();
@@ -31,8 +24,6 @@ $(document).ready(function(){
 
         function init()
         {
-            $('.percent').mask('##0,00%', {reverse: true});
-
             initValidation();
         }
 

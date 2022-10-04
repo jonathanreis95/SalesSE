@@ -4,7 +4,7 @@
         <?php $this->getPageTitle(); ?> 
     </h1>
 
-    <form action="/tax-percentage/<?php echo $this->view->taxPoductTypes->taxe_product_type_id; ?>/update" method="POST">
+    <form id="formTaxes" action="/tax-percentage/<?php echo $this->view->taxPoductTypes->taxe_product_type_id; ?>/update" method="POST">
         <div class="form-group">
             <label for="product_type_id">Tipo de Produto</label>
             <select class="form-control" name="product_type_id" id="product_type_id">
