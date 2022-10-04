@@ -2,7 +2,7 @@
  
 Para rodar o projeto:
 1. Git clone;
-2. Criar as tabelas através do script que se encontra no caminho: storage/tables.sql
+2. Criar as tabelas através do script que se encontra no caminho: storage/backup_database.dump se necessário tbm tem o arquivo tables.sql
 3. Modificar as Configurações de conexão do banco(Nome/Senha) no caminho: app/dabase.php
 3. Renomear o arquivo htacess para .htaccess que se encontra em public/
 3. Rodar o composer install
@@ -12,7 +12,6 @@ Para rodar o projeto:
 
 Futures do projeto:
 - Criar Entidades e Services, Repositores
-- Criar validações dos campos obrigatórios Validate em todas telas
 - Ajuste do htacess para rodar o projeto sem o  -t public
 - Inserir os dados de texto no banco em Maisculo
 - Verificação de dados existentes antes de salvar (Ex: Produto com mesma descrição)
