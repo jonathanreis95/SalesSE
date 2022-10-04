@@ -9,10 +9,10 @@ class HomeController extends BaseController
 
     public function index()
     {
+        // ROTA E CONTROLLER SOMENTE PARA TESTE
         $this->setPageTitle('Welcome');
-        $this->view->nome = "Jonnathan rEIS";
+        $this->view->nome = "JONATHAN REIS";
 
         $this->render('home/index', 'layout');
-        //require_once __DIR__ . "/../Views/home/index.php";
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-$routes[] = ['/', 'HomeController@index'];
+$routes[] = ['/', 'ProductController@index'];
 
 // Cadastro dos produtos;
 $routes[] = ['/products', 'ProductController@index'];
