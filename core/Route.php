@@ -26,7 +26,7 @@ Class Route
             $methodAction = explode('@', $method);
             $routeArray = [$route[0], $methodAction[0], $methodAction[1]];            
             $newRoutes[] = $routeArray;
-        }
+        }        
         $this->routes = $newRoutes;
     }
 
@@ -60,7 +60,7 @@ Class Route
         $urlArray = explode('/', $url);
        
         $foundRoute = false;
-        
+
         foreach($this->routes as $route){
             $pathRoute = $route[0];
             $routeArray = explode('/', $route[0]);
@@ -72,7 +72,7 @@ Class Route
                         $param[] = $urlArray[$i];
                     }
                 }
-                $route[0] = implode($routeArray, '/');
+                $route[0] = implode('/', $routeArray);
             }
 
             if($url == $route[0]){
